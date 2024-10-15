@@ -1,22 +1,26 @@
 package main
 
 import (
+	"fmt"
 	"github.com/GnauqTheBeast/Blockchain/model"
-	"log"
 )
 
-func init() {
-	log.SetPrefix("Blockchain: ")
-}
-
 func main() {
-	bc := model.NewBlockchain()
-
-	bc.AddTransaction("Quang", "Ha", 10)
-	bc.CreateBlock(1, bc.LastBlock().Hash())
-
-	bc.AddTransaction("Ha", "Quang", 5)
-	bc.CreateBlock(2, bc.LastBlock().Hash())
-
-	bc.Print()
+	w := model.NewWallet()
+	fmt.Println(w.PublicKey())
+	fmt.Println(w.PrivateKeyStr())
+	fmt.Println(w.PublicKey())
+	fmt.Println(w.PublicKeyStr())
+	//
+	//bc := model.NewBlockchain("my_blockchain_address")
+	//
+	//bc.AddTransaction("Quang", "Ha", 10)
+	//bc.Mining()
+	//
+	//bc.AddTransaction("Ha", "Quang", 5)
+	//bc.Mining()
+	//
+	//bc.Print()
+	//
+	//fmt.Println(bc.CalcuateTotalAmount("my_blockchain_address"))
 }

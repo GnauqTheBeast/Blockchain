@@ -9,9 +9,9 @@ import (
 )
 
 type Block struct {
+	timestamp    int64
 	nounce       int
 	previousHash [32]byte
-	timestamp    int64
 	transactions []*Transaction
 }
 
